@@ -22,13 +22,16 @@
     }
 
     .invitation {
+      width: 100%;
       max-width: 560px;
-      margin: auto;
+      min-width: 0;
+      margin: 0 auto;
       padding: 35px 22px;
       background: #fffdf9;
       border: 1px solid #e5cfc9;
       border-radius: 180px 180px 12px 12px;
       box-shadow: 0 8px 30px #8d6e6320;
+      overflow: hidden;
     }
 
     .flowers {
@@ -49,6 +52,7 @@
       font-size: clamp(30px, 8vw, 45px);
       font-weight: normal;
       margin: 24px 0;
+      overflow-wrap: break-word;
     }
 
     .ampersand {
@@ -61,6 +65,7 @@
     .message {
       font-size: 16px;
       line-height: 1.9;
+      overflow-wrap: break-word;
     }
 
     .details {
@@ -69,6 +74,7 @@
       border-top: 1px solid #eadbd5;
       border-bottom: 1px solid #eadbd5;
       line-height: 2;
+      overflow-wrap: break-word;
     }
 
     .date {
@@ -76,16 +82,41 @@
       font-size: 23px;
     }
 
+    /* Carte Google Maps */
+    .map-container {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      margin: 25px auto;
+      overflow: hidden;
+      border: 1px solid #eadbd5;
+      border-radius: 12px;
+      line-height: 0;
+    }
+
+    .map-container iframe {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 300px;
+      border: 0;
+    }
+
     .arabic {
       direction: rtl;
       font-family: Tahoma, Arial, sans-serif;
       line-height: 2;
+      overflow-wrap: break-word;
     }
 
     .arabic h2 {
       color: #9d737b;
       font-size: 25px;
       font-weight: normal;
+    }
+
+    .arabic p {
+      font-size: 16px;
     }
 
     .button {
@@ -107,6 +138,54 @@
       margin-top: 25px;
       color: #ad8588;
       font-size: 13px;
+      line-height: 1.8;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #eadbd5;
+      margin: 30px 0;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 15px 10px;
+      }
+
+      .invitation {
+        padding: 30px 16px;
+        border-radius: 130px 130px 12px 12px;
+      }
+
+      .flowers {
+        font-size: 29px;
+        letter-spacing: 5px;
+      }
+
+      .subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+
+      .message {
+        font-size: 15px;
+      }
+
+      .date {
+        font-size: 20px;
+      }
+
+      .map-container {
+        margin: 20px auto;
+      }
+
+      .map-container iframe {
+        height: 240px;
+      }
+
+      .arabic p {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
@@ -120,7 +199,7 @@
 
     <h1>
       XXX
-      <span class="ampersand">&</span>
+      <span class="ampersand">&amp;</span>
       YYYY
     </h1>
 
@@ -135,18 +214,19 @@
       <div>Salle des fêtes ZZZZZZ</div>
     </div>
 
-    <!-- <a class="button" -->
-       <!-- href="https://maps.app.goo.gl/22pd83FCCQEKU5U19" -->
-       <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2215.39559890242!2d-4.8429489!3d38.3809734!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6cbb2df4c2ff89%3A0xfc39edb924fc48f5!2sEl%20patio%20de%20la%20noriega!5e1!3m2!1sfr!2sdz!4v1792224293726!5m2!1sfr!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">📍 Voir l'itinéraire</iframe> -->
-       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2261.8266571804543!2d3.3286477999999997!3d36.6973929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5b775651292f%3A0xd4ed1955d5c39987!2sSalle%20des%20f%C3%AAtes%20Sofia!5e1!3m2!1sfr!2sdz!4v1792225235862!5m2!1sfr!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-       <!-- target="_blank" -->
-       <!-- rel="noopener noreferrer"> -->
-      <!-- 📍 Voir l'itinéraire -->
-    <!-- </a> -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.925122434046!2d3.3260728747636343!3d36.697392872276566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5b775651292f%3A0xd4ed1955d5c39987!2sSalle%20des%20f%C3%AAtes%20Sofia!5e1!3m2!1sen!2sus!4v1792268498508!5m2!1sen!2sus"
+        title="Localisation de la salle de mariage"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
 
-    <hr style="border:0;border-top:1px solid #eadbd5;margin:30px 0;">
+    <hr>
 
-    <section class="arabic" lang="ar">
+    <section class="arabic" lang="ar" dir="rtl">
       <h2>دعوة زفاف</h2>
 
       <p>
@@ -155,8 +235,10 @@
       </p>
 
       <p>
-        <strong>التاريخ:</strong> السبت 19 يونيو 2027<br>
-        <strong>الساعة:</strong> ابتداءً من الساعة الثالثة مساءً<br>
+        <strong>التاريخ:</strong> السبت 19 يونيو 2027
+        <br>
+        <strong>الساعة:</strong> ابتداءً من الساعة الثالثة مساءً
+        <br>
         <strong>المكان:</strong> قاعة الحفلات ZZZZZZ
       </p>
     </section>
